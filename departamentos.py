@@ -1,28 +1,30 @@
 import psycopg2
 
-conn = psycopg2.connect(
-    dbname = 'empresax',
-    user = 'postgres',
-    host = 'localhost',
-    port = '5432'
-)
-
-cursor = conn.cursor()
-
-
-
-while True:
-    nome = input('Digite o nome do departamento: (ou "sair" para sair) ')
-    if nome.lower().strip() == 'sair':
-        break
-    sigla = input('Informe a sigla: ')
-
-    cursor.execute(
-        'insert into departamentos(nome_departamento, sigla) values(%s, %s)', (nome, sigla)
+def inserir_departamentos():
+    conn = psycopg2.connect(
+        dbname = 'empresax',
+        user = 'postgres',
+        host = 'localhost',
+        port = '5432'
     )
-    conn.commit()
 
-conn.close()
-print('Fim')
+    cursor = conn.cursor()
 
 
+
+    while True:
+        nome = input('Digite o nome do departamento: (ou "sair" para sair) ')
+        if nome.lower().strip() == 'sair':
+            break
+        sigla = input('Informe a sigla: ')
+
+        cursor.execute(
+            'insert into departamentos(nome_departamento, sigla) values(%s, %s)', (nome, sigla)
+        )
+        conn.commit()
+
+    conn.close()
+    print('Fim')
+
+if __name__ == '__main__':
+    inserir_departamentos()
