@@ -25,7 +25,7 @@ while True:
          quantidade = int(input('Informe a quantidade: '))
          valor_unitario = float(input('Informe o valor unitário: '))
     except:
-        print('> Os valores informados estão inválidos.')
+        print('> O valor informado é inválido.')
         continue
 
     cursor.execute('insert into vendas(produto, quantidade, valor_unitario) values(%s, %s, %s)', (produto, quantidade, valor_unitario))
