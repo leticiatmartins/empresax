@@ -38,3 +38,7 @@ def inserir_empregados():
 
 if __name__ == '__main__':
     inserir_empregados()
+
+
+# TODO: Criar uma função modificar_empregado() que pergunte id do empregado, nome e salário e altere a linha da tabela com esse id
+# DICA: Comando SQL: update empregados set nome = 'Flambo Framboesa Winston Martins', salario=15000 where id = 12;
