@@ -15,7 +15,7 @@ def inserir_empregados():
     cursor = conn.cursor()
 
     while True:
-        nome = input('Digite o seu nome: (ou "sair" para sair) ')
+        nome = input('Digite o nome do empregado: (ou "sair" para sair) ')
         if nome.lower().strip() == 'sair':
             break
 
