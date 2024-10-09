@@ -22,7 +22,9 @@ def inserir_departamentos():
             'insert into departamentos(nome_departamento, sigla) values(%s, %s)', (nome, sigla)
         )
         conn.commit()
+        print('> Cadastro realizado com sucesso.')
 
+        
     conn.close()
     print('Fim')
 
